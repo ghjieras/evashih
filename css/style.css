@@ -1,0 +1,535 @@
+@charset "UTF-8";
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    background-color:rgb(255, 255, 255);
+    font-family: Arial, Helvetica,"微軟正黑體", "Microsoft Jenghei","黑體-繁","Heiti TC", sans-serif;
+}
+ul{
+    list-style-type: none;
+}
+img{
+    display: block;
+    width: 100%;
+}
+#gotop{
+    display: none;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(243, 237, 245, 0.5);
+    opacity: .5;
+    cursor: pointer;
+}
+
+/* ---------------檔頭區--------------- */
+header{
+    /* position: sticky;
+    top: 0;
+    left: 0; */
+    display: flex;
+    width: 100%; 
+    height: 80px;
+    justify-content: center;
+    padding: 25px 0;
+    margin: 10px auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 99999;
+}
+.logo{
+    position: absolute;
+    animation: logo 2s both;
+}
+@keyframes logo{
+    from{left: -315px;opacity: 0;}
+    to{left: -25px;opacity: 1;}
+}
+.logo img{
+    height: 30px;
+}
+.menu{
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: 30px;
+    animation: menu 3s both;
+}
+@keyframes menu{
+    from{right: -200px;opacity: 0;}
+    to{right: 260px;opacity: 1;}
+}
+.menu li{
+    position: relative;
+    font-size: 1rem;
+    width: 25%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.menu li a{
+    display: block;
+    color: #666;
+    text-decoration: none;
+}
+.menu li a:hover{
+    border: solid 1px #666;
+}
+.menu div{
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    top: 35px;
+    display: none;
+    background-color: rgba(245, 238, 238, 0.6);
+}
+.menu div a{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: dotted 1px #666;
+}
+.icon{
+    position: absolute;
+    display: flex;
+    width: 10%;
+    height: 30px;
+    margin-right: 25px;
+    animation: icon 2s both;
+}
+@keyframes icon{
+    from{right:-240px;opacity: 0;}
+    to{right: -5px;opacity: 1;}
+}
+.icon li{
+    width: 33.3333%;
+    height: 30px;
+}
+.icon li img{
+    height: 30px;
+}
+.icon li a{
+    display: block;
+    text-decoration: none;
+}
+/* ---------------檔頭區結束--------------- */
+
+/* ---------------主要內容區--------------- */
+main{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+/* 首頁 */
+#home{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -999;
+}
+#home::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(233,201,201,.6);
+}
+.name{
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    z-index: 999;
+    color: rgb(37, 37, 37);
+    animation: name 3s both;
+}
+@keyframes name{
+    from{left: -100%;opacity: 0;}
+    to{left: 60%;; opacity: 1;}
+}
+.name h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    letter-spacing: .2rem;
+    padding-bottom: 20px;
+    border-bottom: solid 5px rgb(36, 36, 36);
+    margin-bottom: 20px;
+}
+.name h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+}
+.name h3 a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    cursor: pointer;
+}
+
+
+/* 作品集 */
+#portfolio{
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+/*  gallery css */
+#portfolio .container{
+    width: 90%;
+    padding: 75px 0;
+    margin: 0 auto;
+}
+  
+#portfolio h3 {
+    position: relative;
+    margin-bottom: 20px;
+    font-family: "Oswald", sans-serif;
+    font-size: 44px;
+    text-transform: uppercase;
+    color: #424242;
+}
+#portfolio h4{
+    margin-bottom: 10px;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #424242;
+}
+#handdraw,#graphic,#wedding{
+    width: 100%;
+}
+#handdraw::after,#graphic::after,#wedding::after{
+    content: "";
+    display: flex;
+    height: 5px;
+    background-color: rgb(245, 173, 151);
+    /* margin-left: 3.8rem; */
+}
+  
+#portfolio .gallery-wrap-handdraw {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* width: 100%; */
+    height: 90vh;
+}
+#portfolio .gallery-wrap-graphic {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90vh;
+}
+#portfolio .gallery-wrap-wedding {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90vh;
+}
+  
+  #portfolio .item {
+    flex: 1;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: flex 0.8s ease;
+  }
+  #portfolio .item:hover {
+    flex: 7;
+  }
+  
+  /* #portfolio .item-1 {
+    background-image: url(../images/portfolio-6.jpg);
+  }
+  
+  #portfolio .item-2 {
+    background-image: url(../images/portfolio-7.jpg);
+  }
+   */
+  #portfolio .item-3 {
+    background-image: url(../images/portfolio-3.jpg);
+  }
+  
+  #portfolio .item-4 {
+    background-image: url(../images/portfolio-4.jpg);
+  }
+  
+  #portfolio .item-5 {
+    background-image: url(../images/portfolio-5.jpg);
+  }
+  #portfolio .item-6 {
+    background-image: url(../images/portfolio-6.jpg);
+  }
+  #portfolio .item-7 {
+    background-image: url(../images/portfolio-7.jpg);
+  }
+  #portfolio .item-8 {
+    background-image: url(../images/portfolio-8.jpg);
+  }
+  #portfolio .item-9 {
+    background-image: url(../images/portfolio-9.jpg);
+  }
+  #portfolio .item-10 {
+    background-image: url(../images/portfolio-10.jpg);
+  }
+  #portfolio .item-11 {
+    background-image: url(../images/portfolio-11.jpg);
+  }
+  #portfolio .item-12 {
+    background-image: url(../images/portfolio-12.jpg);
+  }
+  #portfolio .item-13 {
+    background-image: url(../images/portfolio-13.jpg);
+  }
+ 
+/* 關於我 */
+#about{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -999;
+}
+#about::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(233,201,201,.6);
+
+}
+.text{
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    margin-top: 120px;
+    justify-content: center;
+    z-index: 999;
+}
+.text h2{
+    position: absolute;
+    display: flex;
+    width: 60%;
+    height: 13vh;
+    font-size: 4rem;
+    z-index: 999;
+    animation: texth2 2s both;
+    animation-play-state:running;
+}
+@keyframes texth2{
+    from{top:20%;left:-100%;opacity: 0;}
+    to{top:20%;left:16%;opacity: 1;}
+}
+.text h3{
+    position: absolute;
+    width: 25%;
+    height: 20vh;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 25px;
+    background-color: rgba(165, 123, 123, 0.6);
+    animation: texth3 3s both;
+    animation-play-state:running;
+}
+@keyframes texth3{
+    from{top:65%;left:-100%;opacity: 0;}
+    to{top:65%;left:37%;opacity: 1;}
+}
+
+#about .about_socialmedia{
+    display: flex;
+    width: 3%;
+    height: 13vh;
+    flex-direction: column;
+    z-index: 999;
+}
+#about .about_socialmedia li{
+    margin: 10px 10px;
+}
+#about .about_socialmedia li a{
+    display: block;
+    text-decoration: none;
+}
+#about .about_socialmedia li a:hover{
+    cursor: pointer;
+}
+#about .picture{
+    display: flex;
+    width: 70%; 
+    height: 35vh;
+    overflow: hidden;
+    justify-content: center;
+    z-index: 999;
+}
+.picture .img_01,.picture .img_02,.picture .img_03{
+    width: 80%;
+    display: inline-block;
+    margin: 10px 10px;
+}
+/* 聯絡我 */
+#contact{
+    position: relative;
+    /* background-color: rgb(70, 41, 41); */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
+}
+#contact::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(233,201,201,.6);
+}
+#bg_video2{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+    object-fit: cover;
+}
+.formtitle h2{
+    position: absolute;
+    font-size: 3rem;
+    margin-top: 50px;
+    text-align: center;
+    z-index: 9999;
+    animation: formtitleh2 2s both;
+}
+@keyframes formtitleh2{
+    from{top:0;left: -50%;opacity: 0;}
+    to{top:0;left:37%;opacity: 1;}
+}
+.formtitle p{
+    position: absolute;
+    z-index: 9999;
+    font-size: 1rem;
+    text-align: center;
+    animation: formtitlep 2s both;
+}
+@keyframes formtitlep{
+    from{top:20vh;left:-50%;opacity: 0;}
+    to{top:20vh;left:44%;opacity: 1;}
+}
+form{
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-style: solid 1px #666;
+}
+.form{
+    z-index: 9999;
+    margin: 30vh auto;
+    border: none;
+    height: 800px;
+}
+#form_name,#form_email,#form_tel{
+    z-index: 9999;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    height: 60px;
+    border: none;
+    border-bottom: solid 1px #666;
+}
+#form_message{
+    z-index: 9999;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 10px;
+    height: 20vh;
+    border: none;
+    border-bottom: solid 1px #666;
+}
+#form_sumit{
+    z-index: 9999;
+    color: cornsilk;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    height: 60px;
+    border: none;
+}
+#form_sumit:hover{
+    cursor: pointer;
+}
+
+/* ---------------主要內容區結束--------------- */
+/* ---------------頁尾區--------------- */
+footer{
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    height: 100px;
+}
+.socialmedia{
+    position: sticky;/* 凍結定位 */
+    top: 0%;
+    left: 45%;
+    width: 10%;
+}
+.socialmedia li{
+    float: left;
+    width: 33.3333%;
+    text-align: center;
+    padding: 0 auto;
+}
+.socialmedia li img{
+    height: 16px;
+}
+.copyright{
+    position: sticky;/* 凍結定位 */
+    top: 100%;
+    left: 35%;
+    width: 20%;
+}
+/* ---------------頁尾區結束--------------- */
+
+/*手機，767px及以下*/ 
+@media only screen and (max-width:767px){
+    .menu{
+    width: 150%;
+    flex-direction: column;
+    align-content: center;
+    top: 16%;
+    left: 60%;
+    animation: menu 3s both;
+    }
+    @keyframes menu{
+        from{right: -200px;opacity: 0;}
+        to{right: 175px;opacity: 1;}
+    }
+}
+
+/*平板，768px及以上*/ 
+@media only screen and (min-width:768px){
+
+}
+/*筆記型電腦/桌機，992px及以上*/ 
+@media only screen and (min-width:992px){
+
+}
+
